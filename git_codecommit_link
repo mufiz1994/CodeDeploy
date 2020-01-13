@@ -1,0 +1,119 @@
+[mpathan@mpathan Practice]$ migration_dir="./_trash"
+[mpathan@mpathan Practice]$ git_url="https://github.com/mufiz1994/CodeDeploy.git"
+[mpathan@mpathan Practice]$ aws_region="ap-south-1"
+[mpathan@mpathan Practice]$ codecommit_repo_name="CodeDeploy"
+[mpathan@mpathan Practice]$ 
+[mpathan@mpathan Practice]$ 
+[mpathan@mpathan Practice]$ aws codecommit create-repository --repository-name ${codecommit_rep_name} --repository-description "Github Repo" 
+usage: aws [options] <command> <subcommand> [<subcommand> ...] [parameters]
+To see help text, you can run:
+
+  aws help
+  aws <command> help
+  aws <command> <subcommand> help
+aws: error: argument --repository-name: expected one argument
+[mpathan@mpathan Practice]$ aws codecommit create-repository --repository-name ${codecommit_repo_name} --repository-description "Github Repo"
+{
+    "repositoryMetadata": {
+        "repositoryName": "CodeDeploy", 
+        "cloneUrlSsh": "ssh://git-codecommit.ap-south-1.amazonaws.com/v1/repos/CodeDeploy", 
+        "lastModifiedDate": 1578945229.413, 
+        "repositoryDescription": "Github Repo", 
+        "cloneUrlHttp": "https://git-codecommit.ap-south-1.amazonaws.com/v1/repos/CodeDeploy", 
+        "creationDate": 1578945229.413, 
+        "repositoryId": "a4e32992-d419-4d33-8515-e804f02176ff", 
+        "Arn": "arn:aws:codecommit:ap-south-1:765290821413:CodeDeploy", 
+        "accountId": "765290821413"
+    }
+}
+[mpathan@mpathan Practice]$ git clone --mirror ${git_url} ${migration_dir}
+Cloning into bare repository './_trash'...
+remote: Enumerating objects: 46, done.
+remote: Counting objects: 100% (46/46), done.
+remote: Compressing objects: 100% (43/43), done.
+remote: Total 46 (delta 19), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (46/46), done.
+[mpathan@mpathan Practice]$ ls
+Formation  git  installation  Jenkins_data  MK.yml  Mufiz_updated.yaml  Script  template.yml  _trash
+[mpathan@mpathan Practice]$ cd _trash/
+[mpathan@mpathan _trash]$ ls
+branches  config  description  HEAD  hooks  info  objects  packed-refs  refs
+[mpathan@mpathan _trash]$ cd branches/
+[mpathan@mpathan branches]$ ls
+[mpathan@mpathan branches]$ cd ..
+[mpathan@mpathan _trash]$ cd ...
+bash: cd: ...: No such file or directory
+[mpathan@mpathan _trash]$ cd ..
+[mpathan@mpathan Practice]$ cd ${migration_dir}
+[mpathan@mpathan _trash]$ git push ssh://git-codecommit.${aws_region}.amazonaws.com/v1/repos/${codecommit_repo_name} -all
+error: did you mean `--all` (with two dashes ?)
+[mpathan@mpathan _trash]$ git push ssh://git-codecommit.${aws_region}.amazonaws.com/v1/repos/${codecommit_repo_name} --all
+ssh: connect to host git-codecommit.ap-south-1.amazonaws.com port 22: Connection refused
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+[mpathan@mpathan _trash]$ git push ssh://git-codecommit.ap-south-1.amazonaws.com/v1/repos/CodeDeploy --all
+ssh: connect to host git-codecommit.ap-south-1.amazonaws.com port 22: Connection refused
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+[mpathan@mpathan _trash]$ git push ssh://git-codecommit.ap-south-1.amazonaws.com/v1/repos/CodeDeploy --all
+ssh: connect to host git-codecommit.ap-south-1.amazonaws.com port 22: Connection refused
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+[mpathan@mpathan _trash]$ git push https://git-codecommit.ap-south-1.amazonaws.com/v1/repos/CodeDeploy
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://git-codecommit.ap-south-1.amazonaws.com':  mufizadmin+1-at-765290821413 
+Password for 'https:// mufizadmin+1-at-765290821413 @git-codecommit.ap-south-1.amazonaws.com': 
+fatal: unable to access 'https://git-codecommit.ap-south-1.amazonaws.com/v1/repos/CodeDeploy/': The requested URL returned error: 403
+[mpathan@mpathan _trash]$ ls
+branches  config  description  HEAD  hooks  info  objects  packed-refs  refs
+[mpathan@mpathan _trash]$ 
+[mpathan@mpathan _trash]$ 
+[mpathan@mpathan _trash]$ git push https://git-codecommit.ap-south-1.amazonaws.com/v1/repos/CodeDeploy --all
+Username for 'https://git-codecommit.ap-south-1.amazonaws.com':  mufizadmin+1-at-765290821413                         
+Password for 'https:// mufizadmin+1-at-765290821413@git-codecommit.ap-south-1.amazonaws.com': 
+Counting objects: 46, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (43/43), done.
+Writing objects: 100% (46/46), 17.73 KiB | 0 bytes/s, done.
+Total 46 (delta 19), reused 0 (delta 0)
+To https://git-codecommit.ap-south-1.amazonaws.com/v1/repos/CodeDeploy
+ * [new branch]      master -> master
+[mpathan@mpathan _trash]$ ls
+branches  config  description  HEAD  hooks  info  objects  packed-refs  refs
+[mpathan@mpathan _trash]$ cd branches/
+[mpathan@mpathan branches]$ ls
+[mpathan@mpathan branches]$ cd ..
+[mpathan@mpathan _trash]$ cd ..
+[mpathan@mpathan Practice]$ cd _trash/
+[mpathan@mpathan _trash]$ ls
+branches  config  description  HEAD  hooks  info  objects  packed-refs  refs
+[mpathan@mpathan _trash]$ git push https://git-codecommit.ap-south-1.amazonaws.com/v1/repos/CodeDeploy --tags
+Username for 'https://git-codecommit.ap-south-1.amazonaws.com': mufizadmin+1-at-765290821413
+Password for 'https://mufizadmin+1-at-765290821413@git-codecommit.ap-south-1.amazonaws.com': 
+Everything up-to-date
+[mpathan@mpathan _trash]$ 
+
+
+
+
+
+
