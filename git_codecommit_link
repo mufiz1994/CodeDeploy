@@ -65,28 +65,6 @@ fatal: Could not read from remote repository.
 
 Please make sure you have the correct access rights
 and the repository exists.
-[mpathan@mpathan _trash]$ git push https://git-codecommit.ap-south-1.amazonaws.com/v1/repos/CodeDeploy
-warning: push.default is unset; its implicit value is changing in
-Git 2.0 from 'matching' to 'simple'. To squelch this message
-and maintain the current behavior after the default changes, use:
-
-  git config --global push.default matching
-
-To squelch this message and adopt the new behavior now, use:
-
-  git config --global push.default simple
-
-See 'git help config' and search for 'push.default' for further information.
-(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
-'current' instead of 'simple' if you sometimes use older versions of Git)
-
-Username for 'https://git-codecommit.ap-south-1.amazonaws.com':  mufizadmin+1-at-765290821413 
-Password for 'https:// mufizadmin+1-at-765290821413 @git-codecommit.ap-south-1.amazonaws.com': 
-fatal: unable to access 'https://git-codecommit.ap-south-1.amazonaws.com/v1/repos/CodeDeploy/': The requested URL returned error: 403
-[mpathan@mpathan _trash]$ ls
-branches  config  description  HEAD  hooks  info  objects  packed-refs  refs
-[mpathan@mpathan _trash]$ 
-[mpathan@mpathan _trash]$ 
 [mpathan@mpathan _trash]$ git push https://git-codecommit.ap-south-1.amazonaws.com/v1/repos/CodeDeploy --all
 Username for 'https://git-codecommit.ap-south-1.amazonaws.com':  mufizadmin+1-at-765290821413                         
 Password for 'https:// mufizadmin+1-at-765290821413@git-codecommit.ap-south-1.amazonaws.com': 
